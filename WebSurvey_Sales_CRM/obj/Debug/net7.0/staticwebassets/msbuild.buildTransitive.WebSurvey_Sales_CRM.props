@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\WebSurvey_Sales_CRM.props" />
+</Project>

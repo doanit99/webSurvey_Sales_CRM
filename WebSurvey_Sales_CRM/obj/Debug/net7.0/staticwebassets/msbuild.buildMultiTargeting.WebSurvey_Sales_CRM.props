@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\WebSurvey_Sales_CRM.props" />
+</Project>
