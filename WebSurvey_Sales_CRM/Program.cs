@@ -44,4 +44,8 @@ app.MapControllerRoute(
 	name: "default",
 	pattern: "{controller=Account}/{action=Login}");
 
+app.MapControllerRoute(
+   name: "Areas",
+   pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
+
 app.Run();
