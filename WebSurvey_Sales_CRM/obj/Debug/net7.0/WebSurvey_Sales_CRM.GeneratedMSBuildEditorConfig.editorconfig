@@ -20,8 +20,24 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/DoanIT/Desktop/webSurvey_Sales_CRM-master/WebSurvey_Sales_CRM/Areas/Admin/Views/NewOption/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmV3T3B0aW9uXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DoanIT/Desktop/webSurvey_Sales_CRM-master/WebSurvey_Sales_CRM/Areas/Admin/Views/NewOption/IndexAddRolesUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTmV3T3B0aW9uXEluZGV4QWRkUm9sZXNVc2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/DoanIT/Desktop/webSurvey_Sales_CRM-master/WebSurvey_Sales_CRM/Areas/Admin/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DoanIT/Desktop/webSurvey_Sales_CRM-master/WebSurvey_Sales_CRM/Areas/Admin/Views/Survey/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3VydmV5XEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DoanIT/Desktop/webSurvey_Sales_CRM-master/WebSurvey_Sales_CRM/Areas/Admin/Views/Survey/IndexEnterprise.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3VydmV5XEluZGV4RW50ZXJwcmlzZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/DoanIT/Desktop/webSurvey_Sales_CRM-master/WebSurvey_Sales_CRM/Views/Account/Login.cshtml]

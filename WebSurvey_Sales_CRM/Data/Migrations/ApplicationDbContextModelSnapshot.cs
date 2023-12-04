@@ -132,8 +132,8 @@ namespace WebSurvey_Sales_CRM.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<int>("NameRolesUser")
-                        .HasColumnType("int");
+                    b.Property<string>("NameRolesUser")
+                        .HasColumnType("nvarchar(100)");
 
                     b.HasKey("Id");
 

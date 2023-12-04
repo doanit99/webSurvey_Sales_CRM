@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<WebSurvey_Sales_CRM.Models.Employee>
+@inject IHttpContextAccessor HttpContextAccessor
+
 @{
     ViewData["Title"] = "Index";
 }
@@ -35,7 +37,17 @@
         <label for="TeamCode">TeamCode:</label>
         <input type="text" name="TeamCode" required>
 
-        <input type="hidden" name="UserId" value="1">
+        @if (HttpContextAccessor.HttpContext?.Session.GetInt32("idUser") != null)
+        {
+            <input type="hidden" name="UserId" value="@HttpContextAccessor.HttpContext?.Session.GetInt32("idUser")">
+        }
+        else
+        {
+            <script>
+                window.location.href = '/Account/Login';
+            </script>
+        }
+        
         <button type="submit">Submit</button>
     </form>
 </body>

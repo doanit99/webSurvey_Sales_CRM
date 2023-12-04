@@ -1,4 +1,6 @@
 using Microsoft.EntityFrameworkCore;
+using WebSurvey_Sales_CRM.Areas.Admin.Reponsitory.Interface;
+using WebSurvey_Sales_CRM.Areas.Admin.Reponsitory.Service;
 using WebSurvey_Sales_CRM.Data;
 using WebSurvey_Sales_CRM.Reponsitory.Interface;
 using WebSurvey_Sales_CRM.Reponsitory.Service;
@@ -13,9 +15,13 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 //Register DI
-builder.Services.AddScoped<IAccount, AccountSevice>();
-builder.Services.AddScoped<IEmployee, EmployeeSevice>();
-builder.Services.AddScoped<IEnterprise, EnterpriseSevice>();
+	//Register DI Frontend
+		builder.Services.AddScoped<IAccount, AccountSevice>();
+		builder.Services.AddScoped<IEmployee, EmployeeSevice>();
+		builder.Services.AddScoped<IEnterprise, EnterpriseSevice>();
+	//Register DI Backend
+		builder.Services.AddScoped<ISurvey, SurveyService>();
+		builder.Services.AddScoped<INewOption, NewOptionService>();
 
 //Configure Session
 builder.Services.AddHttpContextAccessor();
@@ -47,5 +53,6 @@ app.MapControllerRoute(
 app.MapControllerRoute(
    name: "Areas",
    pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
+
 
 app.Run();

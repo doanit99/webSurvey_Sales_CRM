@@ -1,0 +1,48 @@
+﻿@model IEnumerable<WebSurvey_Sales_CRM.Models.RolesUser>
+
+@{
+    ViewData["Title"] = "RolesUser";
+    Layout = "_Layout";
+}
+
+<h1>@ViewData["Title"]</h1>
+<a href="/admin/newoption/IndexAddRolesUser">AddNameRoles</a>
+<h2>RolesUser</h2>
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>NameRolesUser</th>
+           
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.NameRolesUser</td>
+                   
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="2">No data available</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
