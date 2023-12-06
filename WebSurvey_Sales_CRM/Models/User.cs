@@ -7,16 +7,17 @@ namespace WebSurvey_Sales_CRM.Models
 	{
 		[Key]
 		public int Id { get; set; }
-		[Required(ErrorMessage = "This field is not empty..")]
+		[Required(ErrorMessage = "Vui lòng nhập đầy đủ thông tin")]
 		[Column(TypeName = "nvarchar(100)")]
-		public string DisplayName { get; set; }
-		[Required(ErrorMessage = "This field is not empty..")]
+        public string DisplayName { get; set; }
+		[Required(ErrorMessage = "Vui lòng nhập đầy đủ thông tin")]
 		[Column(TypeName = "nvarchar(250)")]
 		public string UserName { get; set; }
-		[Required(ErrorMessage = "This field is not empty..")]
-		[Column(TypeName = "nvarchar(250)")]
+		[Required(ErrorMessage = "Vui lòng nhập đầy đủ thông tin")]
+        [StringLength(250, MinimumLength = 6, ErrorMessage = "Mật khẩu phải có ít nhất 6 ký tự.")]
+        [Column(TypeName = "nvarchar(250)")]
 		public string Password { get; set; }
-        [Required(ErrorMessage = "This field is not empty..")]
+        
         [Column(TypeName = "nvarchar(100)")]
         public string TypeUser { get; set; }
         public int? Roles { get; set; }

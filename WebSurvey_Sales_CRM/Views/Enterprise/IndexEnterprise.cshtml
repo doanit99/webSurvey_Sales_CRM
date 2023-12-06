@@ -1,62 +1,83 @@
-﻿@model IEnumerable<WebSurvey_Sales_CRM.Models.Enterprise>
+﻿@model List<string>
 @inject IHttpContextAccessor HttpContextAccessor
-@{
-    ViewData["Title"] = "IndexEnterprise";
-}
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Store Information Enterprise</title>
-</head>
-<body>
-    <h1>Store Information Enterprise</h1>
 
-    @if (ViewBag.ErrorMessage != null)
-    {
-        <p style="color: red;">@ViewBag.ErrorMessage</p>
-    }
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+<section>
+    <div class="container mt-5">
+        <h1 class="mb-4">Khảo sát doanh nghiệp</h1>
 
-    <form asp-action="StoreInformationEnterprise" method="post">
-        <label for="Name">Name:</label>
-        <input type="text" name="Name" required>
+        <form asp-action="StoreInformationEnterprise" method="post">
+            <div class="form-group">
+                <label for="Name">Họ tên</label>
+                <input type="text" class="form-control" name="Name" required>
+            </div>
 
-        <label for="TaxCode">TaxCode:</label>
-        <input type="text" name="TaxCode" required>
+            <div class="form-group">
+                <label for="Name">Mã số thuế</label>
+                <input type="text" class="form-control" name="TaxCode" required>
+            </div>
 
-        <label for="Represent">Represent:</label>
-        <input type="text" name="Represent" required>
+            <div class="form-group">
+                <label for="Name">Người giới thiệu</label>
+                <input type="text" class="form-control" name="Represent" required>
+            </div>
 
-        <label for="Position">Position:</label>
-        <input type="text" name="Position" required>
+            <div class="form-group">
+                <label for="Name">Chức vụ</label>
+                <input type="text" class="form-control" name="Position" required>
+            </div>
 
-        <label for="Phone">Phone:</label>
-        <input type="text" name="Phone" required>
+            <div class="form-group">
+                <label for="Phone">Số điện thoại</label>
+                <input type="text" class="form-control" name="Phone"
+                       pattern="[0-9]{10}" title="Please enter a 10-digit phone number" required>
+            </div>
 
-        <label for="Email">Email:</label>
-        <input type="text" name="Email" required>
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="email" class="form-control" name="Email" required>
+            </div>
 
-        <label for="Address">Address:</label>
-        <input type="text" name="Address" required>
+            <div class="form-group">
+                <label for="Address">Địa chỉ</label>
+                @* <input type="text" class="form-control" name="Address" required> *@
+                <select id="Address" name="Address" class="form-control">
+                    @foreach (var address in Model)
+                    {
+                        <option value="@address">@address</option>
+                    }
+                </select>
+            </div>
 
-        <label for="SourceCode">SourceCode:</label>
-        <input type="text" name="SourceCode" required>
+            <div class="form-group">
+                <label for="SourceCode">Bạn biết đến trang web này từ đâu?</label>
+                <input type="text" class="form-control" name="SourceCode" required>
+            </div>
 
-        <label for="TeamCode">TeamCode:</label>
-        <input type="text" name="TeamCode" required>
+            <div class="form-group">
+                <label for="TeamCode">Nhóm</label>
+                <input type="text" class="form-control" name="TeamCode" required>
+            </div>
 
-        @if (HttpContextAccessor.HttpContext?.Session.GetInt32("idUser") != null)
-        {
-            <input type="hidden" name="UserId" value="@HttpContextAccessor.HttpContext?.Session.GetInt32("idUser")">
-        }
-        else
-        {
-            <script>
-                window.location.href = '/Account/Login';
-            </script>
-        }
-        <button type="submit">Submit</button>
-    </form>
-</body>
-</html>
+            @if (HttpContextAccessor.HttpContext?.Session.GetInt32("idUser") != null)
+            {
+                <input type="hidden" name="UserId" value="@HttpContextAccessor.HttpContext?.Session.GetInt32("idUser")">
+            }
+            else
+            {
+                <script>
+                    window.location.href = '/Account/Login';
+                </script>
+            }
+
+            <button type="submit" class="btn btn-primary">Gửi</button>
+        </form>
+    </div>
+</section>
+
+
+
+
+
 

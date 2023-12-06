@@ -1,7 +1,9 @@
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using WebSurvey_Sales_CRM.Areas.Admin.Reponsitory.Interface;
 using WebSurvey_Sales_CRM.Areas.Admin.Reponsitory.Service;
 using WebSurvey_Sales_CRM.Data;
+using WebSurvey_Sales_CRM.Models;
 using WebSurvey_Sales_CRM.Reponsitory.Interface;
 using WebSurvey_Sales_CRM.Reponsitory.Service;
 
@@ -22,6 +24,7 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectio
 	//Register DI Backend
 		builder.Services.AddScoped<ISurvey, SurveyService>();
 		builder.Services.AddScoped<INewOption, NewOptionService>();
+		builder.Services.AddScoped<IUser, UserService>();
 
 //Configure Session
 builder.Services.AddHttpContextAccessor();
@@ -29,6 +32,7 @@ builder.Services.AddSession(options =>
 {
     options.IdleTimeout = TimeSpan.FromMinutes(30);
 });
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -43,6 +47,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 //
 app.UseSession();
+//
+app.UseAuthentication();
 
 app.UseAuthorization();
 

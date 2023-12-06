@@ -4,6 +4,8 @@ using System.Text;
 using WebSurvey_Sales_CRM.Data;
 using WebSurvey_Sales_CRM.Models;
 using WebSurvey_Sales_CRM.Reponsitory.Interface;
+
+
 namespace WebSurvey_Sales_CRM.Reponsitory.Service
 {
     public class AccountSevice : IAccount
@@ -67,18 +69,18 @@ namespace WebSurvey_Sales_CRM.Reponsitory.Service
                     _httpContextAccessor.HttpContext?.Session.SetString("DisplayName", user.DisplayName);
                     _httpContextAccessor.HttpContext?.Session.SetString("UserName", user.UserName);
                     _httpContextAccessor.HttpContext?.Session.SetInt32("idUser", user.Id);
-
                     return user;
                 }
+               
             }
             catch (Exception ex)
             {
                 Console.WriteLine($"Error occurred: {ex.Message}");
                 throw;
             }
-
             return null;
         }
+
 
 
     }

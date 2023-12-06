@@ -26,6 +26,7 @@ namespace WebSurvey_Sales_CRM.Controllers
         {
             try
             {
+                
                 var data = await _accountRepository.Register(user);
                 
                 return RedirectToAction("Login");
@@ -50,12 +51,21 @@ namespace WebSurvey_Sales_CRM.Controllers
             
             try
             {
+                if (string.IsNullOrWhiteSpace(userName) || string.IsNullOrWhiteSpace(password))
+                {
+                    TempData["ErrorMessage"] = "Vui lòng nhập đầy đủ thông tin đăng nhập.";
+                }
                 var data = await _accountRepository.LoginAsync(userName, password);
-                if (data.TypeUser == "Doanh nghiệp")
+                if (data != null && data.TypeUser == "Doanh nghiệp")
                 {
                     return RedirectToAction("IndexEnterprise", "Enterprise");
                 }
-                return RedirectToAction("Index", "Employee");
+                else if (data != null && data.TypeUser == "Nhân viên")
+                {
+                    return RedirectToAction("Index", "Employee");
+                }
+                TempData["ErrorMessage"] = "Tài khoản hoặc mật khẩu không chính xác.";
+                return View();
             }
             catch (Exception ex)
             {
