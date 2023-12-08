@@ -14,5 +14,7 @@ namespace WebSurvey_Sales_CRM.Data
 		public DbSet<Enterprise> Enterprises { get; set; }
 		public DbSet<RolesUser> RolesUsers { get; set; }
 		public DbSet<User> Users { get; set; }
-	}
+        public DbSet<Source> Sources { get; set; }
+        public DbSet<Team> Teams { get; set; }
+    }
 }

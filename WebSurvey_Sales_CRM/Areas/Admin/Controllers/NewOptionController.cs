@@ -27,22 +27,16 @@ namespace WebSurvey_Sales_CRM.Areas.Admin.Controllers
                 return View();
             }
         }
-
-        //View Add Roles User
-      
-        public IActionResult IndexAddRolesUser()
-        {
-            return View();
-        }
-
+        
         //Add one row data in Roles User
         [HttpPost]
-        public async Task<IActionResult> IndexAddRolesUser(RolesUser rolesUser)
+        
+        public async Task<IActionResult> Index(RolesUser rolesUser)
         {
             try
             {
                 await _newOptionRepository.AddNameRoles(rolesUser);
-                return Redirect("/Admin/NewOption/Index");
+                return await Index();
             }
             catch (Exception ex)
             {
@@ -50,6 +44,40 @@ namespace WebSurvey_Sales_CRM.Areas.Admin.Controllers
                 return View();
             }
         }
+        //Delete
+        [HttpGet]
+        public async Task<IActionResult> Delete(int id)
+        {
+            try
+            {
+                var data = await _newOptionRepository.GetDeleteNameRoles(id);
+                return View(data);
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"Error: {ex.Message}";
+                return View();
+            }
+        }
+        //Delete one row data in Roles User
+
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            try
+            {
+                await _newOptionRepository.DeleteNameRoles(id);
+
+                return Redirect("/admin/newoption");
+            }
+            catch (Exception ex)
+            {
+                TempData["ErrorMessage"] = $"Error: {ex.Message}";
+                return View();
+            }
+        }
+
 
 
     }

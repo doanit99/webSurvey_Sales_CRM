@@ -1,9 +1,7 @@
-using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using WebSurvey_Sales_CRM.Areas.Admin.Reponsitory.Interface;
 using WebSurvey_Sales_CRM.Areas.Admin.Reponsitory.Service;
 using WebSurvey_Sales_CRM.Data;
-using WebSurvey_Sales_CRM.Models;
 using WebSurvey_Sales_CRM.Reponsitory.Interface;
 using WebSurvey_Sales_CRM.Reponsitory.Service;
 
@@ -52,12 +50,14 @@ app.UseAuthentication();
 
 app.UseAuthorization();
 
+app.UseRouting();
+
 app.MapControllerRoute(
 	name: "default",
 	pattern: "{controller=Account}/{action=Login}");
 
 app.MapControllerRoute(
-   name: "Areas",
+   name: "areas",
    pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
 
 

@@ -8,37 +8,30 @@ namespace WebSurvey_Sales_CRM.Models
 		[Key]
 		public int Id { get; set; }
 
-		[Required(ErrorMessage = "This field is not empty..")]
 		[Column(TypeName = "nvarchar(250)")]
 		public string Name { get; set; }
 
-		[Required(ErrorMessage = "This field is not empty..")]
 		public string TaxCode { get; set; }
 
-		[Required(ErrorMessage = "This field is not empty..")]
 		[Column(TypeName = "nvarchar(100)")]
 		public string Represent { get; set; }
 
-		[Required(ErrorMessage = "This field is not empty..")]
 		[Column(TypeName = "nvarchar(100)")]
 		public string Position { get; set; }
 
-		[Required(ErrorMessage = "This field is not empty..")]
 		public int Phone { get; set; }
 
-		[Required(ErrorMessage = "This field is not empty..")]
 		[Column(TypeName = "nvarchar(250)")]
 		public string Email { get; set; }
 
-		[Required(ErrorMessage = "This field is not empty..")]
 		[Column(TypeName = "nvarchar(500)")]
 		public string Address { get; set; }
 
-		[Required(ErrorMessage = "This field is not empty..")]
-		public string SourceCode { get; set; }
+		public int SourceCode { get; set; }
 
-		[Required(ErrorMessage = "This field is not empty..")]
-		public string TeamCode { get; set; }
+		public int TeamCode { get; set; }
+
+		public int Status { get; set; }
 		public int? UserId { get; set; }
 
 		[ForeignKey("UserId")]

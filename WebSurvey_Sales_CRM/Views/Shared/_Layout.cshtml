@@ -31,15 +31,18 @@
                 </div>
                 @if (HttpContextAccessor.HttpContext?.Session.GetInt32("idUser") != null)
                 {
-                    <a class="nav-link text-dark" asp-area="" asp-controller="Dashboard" asp-action="Index">Xin chào, @HttpContextAccessor.HttpContext?.Session.GetString("DisplayName")</a>
+                    
+                    if (HttpContextAccessor.HttpContext?.Session.GetInt32("Roles") == 1)
+                    {
+                        <a class="nav-link text-dark" href="/admin">Xin chào, @HttpContextAccessor.HttpContext?.Session.GetString("DisplayName")</a>
+                    }
+                    else
+                    {
+                        <a class="nav-link text-dark" href="">Xin chào, @HttpContextAccessor.HttpContext?.Session.GetString("DisplayName")</a>
+                    }
                     <a class="nav-link text-dark" asp-area="" asp-action="Logout" asp-controller="Account">Đăng xuất</a>
                 }
-                else
-                {
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Register">Đăng kí</a>
-                        <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Đăng nhập</a>
-                   
-                }
+            
 
 
             </div>

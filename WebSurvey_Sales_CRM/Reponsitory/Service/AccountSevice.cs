@@ -68,6 +68,7 @@ namespace WebSurvey_Sales_CRM.Reponsitory.Service
                 {
                     _httpContextAccessor.HttpContext?.Session.SetString("DisplayName", user.DisplayName);
                     _httpContextAccessor.HttpContext?.Session.SetString("UserName", user.UserName);
+                    _httpContextAccessor.HttpContext?.Session.SetInt32("Roles", user.Roles);
                     _httpContextAccessor.HttpContext?.Session.SetInt32("idUser", user.Id);
                     return user;
                 }

@@ -20,7 +20,7 @@ namespace WebSurvey_Sales_CRM.Models
         
         [Column(TypeName = "nvarchar(100)")]
         public string TypeUser { get; set; }
-        public int? Roles { get; set; }
+        public int Roles { get; set; }
 		public ICollection<Employee> Employees { get; set; }
 		public ICollection<Enterprise> Enterprises { get; set; }
 	}

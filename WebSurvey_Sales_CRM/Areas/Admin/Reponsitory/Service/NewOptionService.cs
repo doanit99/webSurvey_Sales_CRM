@@ -45,5 +45,43 @@ namespace WebSurvey_Sales_CRM.Areas.Admin.Reponsitory.Service
                 throw;
             }
         }
+        //index delete
+        [HttpGet]
+        public async Task<IEnumerable<RolesUser>> GetDeleteNameRoles(int id)
+        {
+            try
+            {
+
+                return await _context.RolesUsers.Where(r => r.Id == id).ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error occurred: {ex.Message}");
+                throw;
+            }
+        }
+
+        //delete
+        [HttpPost]
+        public async Task<IEnumerable<RolesUser>> DeleteNameRoles(int id)
+        {
+            try
+            {
+                var data = await _context.RolesUsers.FindAsync(id);
+                _context.RolesUsers.Remove(data);
+                _context.SaveChanges();
+                return _context.RolesUsers;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error occurred: {ex.Message}");
+                throw;
+            }
+        }
+
+
+
+
+
     }
 }
