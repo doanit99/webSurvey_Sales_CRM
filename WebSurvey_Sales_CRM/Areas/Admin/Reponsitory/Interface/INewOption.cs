@@ -5,9 +5,17 @@ namespace WebSurvey_Sales_CRM.Areas.Admin.Reponsitory.Interface
 {
     public interface INewOption
     {
+        //Roles
         Task<IEnumerable<RolesUser>> AddNameRoles(RolesUser rolesUser);
         Task<IEnumerable<RolesUser>> DeleteNameRoles(int roleId);
         Task<IEnumerable<RolesUser>> GetDeleteNameRoles(int id);
         Task<IEnumerable<RolesUser>> GetRoles();
+
+        //Source
+        Task<IEnumerable<Source>> AddNameSource(Source source);
+        Task<IEnumerable<Source>> DeleteNameSource(int id);
+        Task<IEnumerable<Source>> GetDeleteNameSource(int id);
+        Task<IEnumerable<Source>> GetSource();
+
     }
 }
