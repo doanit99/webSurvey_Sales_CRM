@@ -7,9 +7,11 @@ namespace WebSurvey_Sales_CRM.Areas.Admin.Controllers
     public class SurveyController : Controller
     {
         public readonly ISurvey _surveyRepository;
-        public SurveyController(ISurvey surveyRepository)
+        private readonly IHttpContextAccessor _httpContextAccessor;
+        public SurveyController(ISurvey surveyRepository, IHttpContextAccessor httpContextAccessor)
         {
-             this._surveyRepository = surveyRepository;
+            _surveyRepository = surveyRepository;
+            _httpContextAccessor = httpContextAccessor;
         }
         //Get all data in table Employee
         [HttpGet]
@@ -17,6 +19,11 @@ namespace WebSurvey_Sales_CRM.Areas.Admin.Controllers
         {
             try
             {
+                if (_httpContextAccessor.HttpContext?.Session.GetInt32("idUser") == null)
+                {
+                    return Redirect("/");
+                }
+               
                 var data = await _surveyRepository.GetAllDataEmployee();
                 return View(data);
             }
@@ -33,6 +40,11 @@ namespace WebSurvey_Sales_CRM.Areas.Admin.Controllers
         {
             try
             {
+                if (_httpContextAccessor.HttpContext?.Session.GetInt32("idUser") == null)
+                {
+                    return Redirect("/");
+                }
+
                 var data = await _surveyRepository.GetAllDataEnterprise();
                 return View(data);
             }

@@ -1,4 +1,5 @@
-﻿using WebSurvey_Sales_CRM.Data;
+﻿using Microsoft.EntityFrameworkCore;
+using WebSurvey_Sales_CRM.Data;
 using WebSurvey_Sales_CRM.Models;
 using WebSurvey_Sales_CRM.Reponsitory.Interface;
 
@@ -11,6 +12,7 @@ namespace WebSurvey_Sales_CRM.Reponsitory.Service
         {
             this._context = context;
         }
+        //
         public async Task<IEnumerable<Employee>> StoreInformationEmployee(Employee employee)
         {
             try
@@ -27,6 +29,38 @@ namespace WebSurvey_Sales_CRM.Reponsitory.Service
 
         }
 
-        
+        //Get all data in table Source
+        public IEnumerable<Source> GetSource()
+        {
+            try 
+            {
+                return  _context.Sources.ToList();
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine($"Error occurred: {ex.Message}");
+                throw;
+            }
+            
+
+        }
+
+        //Get all data in table Team
+        public IEnumerable<Team> GetTeam()
+        {
+            try
+            {
+                return _context.Teams.ToList();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error occurred: {ex.Message}");
+                throw;
+            }
+
+
+        }
+
+
     }
 }

@@ -9,7 +9,7 @@ namespace WebSurvey_Sales_CRM.Controllers
         private readonly IEmployee _employeeRepository;
         public EmployeeController(IEmployee employeeRepository)
         {
-            this._employeeRepository = employeeRepository;
+            _employeeRepository = employeeRepository;
         }
         public IActionResult Index()
         {
@@ -79,7 +79,19 @@ namespace WebSurvey_Sales_CRM.Controllers
 
 
             };
-            return View(vietnamAddresses);
+
+
+            var sourceModel = _employeeRepository.GetSource();
+            var teamModel = _employeeRepository.GetTeam();
+
+            var viewModel = new
+            {
+                VietnamAddresses = vietnamAddresses,
+                SourceModel = sourceModel,
+                TeamModel = teamModel
+            };
+
+            return View(viewModel);
         }
 
         //Function add one data row

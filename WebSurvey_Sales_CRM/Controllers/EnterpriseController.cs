@@ -7,9 +7,12 @@ namespace WebSurvey_Sales_CRM.Controllers
     public class EnterpriseController : Controller
     {
         private readonly IEnterprise _enterpriseRepository;
-        public EnterpriseController(IEnterprise enterpriseRepository)
+        private readonly IEmployee _employeeRepository;
+
+        public EnterpriseController(IEnterprise enterpriseRepository, IEmployee employeeRepository)
         {
-             this._enterpriseRepository = enterpriseRepository;
+            this._enterpriseRepository = enterpriseRepository;
+            _employeeRepository = employeeRepository;
         }
         public IActionResult IndexEnterprise()
         {
@@ -79,7 +82,18 @@ namespace WebSurvey_Sales_CRM.Controllers
 
 
             };
-            return View(vietnamAddresses);
+
+            var sourceModel = _employeeRepository.GetSource();
+            var teamModel = _employeeRepository.GetTeam();
+
+            var viewModel = new
+            {
+                VietnamAddresses = vietnamAddresses,
+                SourceModel = sourceModel,
+                TeamModel = teamModel
+            };
+
+            return View(viewModel);
         }
 
         //Function add one data row

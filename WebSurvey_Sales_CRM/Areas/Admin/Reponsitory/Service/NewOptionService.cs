@@ -104,7 +104,7 @@ namespace WebSurvey_Sales_CRM.Areas.Admin.Reponsitory.Service
             }
 
         }
-        //Add name roles in RolesUser
+        //Add name source in Source
         [HttpPost]
         public async Task<IEnumerable<Source>> AddNameSource(Source source)
         {
@@ -139,7 +139,7 @@ namespace WebSurvey_Sales_CRM.Areas.Admin.Reponsitory.Service
                 throw;
             }
         }
-        //delete name roles
+        //delete name source
         [HttpPost]
         public async Task<IEnumerable<Source>> DeleteNameSource(int id)
         {
@@ -161,5 +161,78 @@ namespace WebSurvey_Sales_CRM.Areas.Admin.Reponsitory.Service
             }
         }
 
+/*-------------------------------------------------- Team --------------------------------------------------*/
+
+        //Get all name Source in Source
+        [HttpGet]
+        public async Task<IEnumerable<Team>> GetTeam()
+        {
+            try
+            {
+                return await _context.Teams.ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error occurred: {ex.Message}");
+                throw;
+            }
+
+        }
+        //Add name team in Team
+        [HttpPost]
+        public async Task<IEnumerable<Team>> AddNameTeam(Team team)
+        {
+            try
+            {
+                if (team == null)
+                {
+                    return Enumerable.Empty<Team>();
+                }
+
+                await _context.Teams.AddAsync(team);
+                await _context.SaveChangesAsync();
+                return _context.Teams;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error occurred: {ex.Message}");
+                throw;
+            }
+        }
+        //find row data by id 
+        [HttpGet]
+        public async Task<IEnumerable<Team>> GetDeleteNameTeam(int id)
+        {
+            try
+            {
+                return await _context.Teams.Where(r => r.Id == id).ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error occurred: {ex.Message}");
+                throw;
+            }
+        }
+        //delete name team
+        [HttpPost]
+        public async Task<IEnumerable<Team>> DeleteNameTeam(int id)
+        {
+            try
+            {
+                var data = await _context.Teams.FindAsync(id);
+                if (data == null)
+                {
+                    return Enumerable.Empty<Team>();
+                }
+                _context.Teams.Remove(data);
+                _context.SaveChanges();
+                return _context.Teams;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error occurred: {ex.Message}");
+                throw;
+            }
+        }
     }
 }

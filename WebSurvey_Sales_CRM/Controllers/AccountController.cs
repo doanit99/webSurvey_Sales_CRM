@@ -10,7 +10,7 @@ namespace WebSurvey_Sales_CRM.Controllers
         private readonly IHttpContextAccessor _httpContextAccessor;
         public AccountController(IAccount accountRepository, IHttpContextAccessor httpContextAccessor)
         {
-            this._accountRepository = accountRepository;
+            _accountRepository = accountRepository;
             _httpContextAccessor = httpContextAccessor;
         }
         //Register view
@@ -28,6 +28,7 @@ namespace WebSurvey_Sales_CRM.Controllers
             {
                 
                 var data = await _accountRepository.Register(user);
+
                 
                 return RedirectToAction("Login");
             }
@@ -51,6 +52,7 @@ namespace WebSurvey_Sales_CRM.Controllers
             
             try
             {
+               
                 if (string.IsNullOrWhiteSpace(userName) || string.IsNullOrWhiteSpace(password))
                 {
                     TempData["ErrorMessage"] = "Vui lòng nhập đầy đủ thông tin đăng nhập.";

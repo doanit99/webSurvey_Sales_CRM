@@ -16,6 +16,9 @@ namespace WebSurvey_Sales_CRM.Areas.Admin.Reponsitory.Interface
         Task<IEnumerable<Source>> DeleteNameSource(int id);
         Task<IEnumerable<Source>> GetDeleteNameSource(int id);
         Task<IEnumerable<Source>> GetSource();
-
+        Task<IEnumerable<Team>> GetTeam();
+        Task<IEnumerable<Team>> AddNameTeam(Team team);
+        Task<IEnumerable<Team>> GetDeleteNameTeam(int id);
+        Task<IEnumerable<Team>> DeleteNameTeam(int id);
     }
 }

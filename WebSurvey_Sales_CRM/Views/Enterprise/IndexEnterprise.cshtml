@@ -1,4 +1,4 @@
-﻿@model List<string>
+﻿@model dynamic
 @inject IHttpContextAccessor HttpContextAccessor
 
 
@@ -19,7 +19,7 @@
             </div>
 
             <div class="form-group">
-                <label for="Name">Người giới thiệu</label>
+                <label for="Name">Người đại diện</label>
                 <input type="text" class="form-control" name="Represent" required>
             </div>
 
@@ -41,9 +41,8 @@
 
             <div class="form-group">
                 <label for="Address">Địa chỉ</label>
-                @* <input type="text" class="form-control" name="Address" required> *@
                 <select id="Address" name="Address" class="form-control">
-                    @foreach (var address in Model)
+                    @foreach (var address in Model.VietnamAddresses)
                     {
                         <option value="@address">@address</option>
                     }
@@ -52,12 +51,23 @@
 
             <div class="form-group">
                 <label for="SourceCode">Bạn biết đến trang web này từ đâu?</label>
-                <input type="text" class="form-control" name="SourceCode" required>
+                <select name="SourceCode" class="form-control" required>
+                    @foreach (var source in Model.SourceModel)
+                    {
+                        <option value="@source.SourceCode">@source.Name</option>
+                    }
+                </select>
+
             </div>
 
             <div class="form-group">
                 <label for="TeamCode">Nhóm</label>
-                <input type="text" class="form-control" name="TeamCode" required>
+                <select name="TeamCode" class="form-control" required>
+                    @foreach (var team in Model.TeamModel)
+                    {
+                        <option value="@team.TeamCode">@team.Name</option>
+                    }
+                </select>
             </div>
 
             @if (HttpContextAccessor.HttpContext?.Session.GetInt32("idUser") != null)
