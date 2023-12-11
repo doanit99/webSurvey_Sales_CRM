@@ -511,3 +511,9 @@ C:\Users\DoanIT\Desktop\webSurvey_Sales_CRM-master\WebSurvey_Sales_CRM\bin\Debug
 C:\Users\DoanIT\Desktop\webSurvey_Sales_CRM-master\WebSurvey_Sales_CRM\bin\Debug\net7.0\Microsoft.Extensions.Identity.Core.dll
 C:\Users\DoanIT\Desktop\webSurvey_Sales_CRM-master\WebSurvey_Sales_CRM\bin\Debug\net7.0\Microsoft.Extensions.Identity.Stores.dll
 C:\Users\DoanIT\Desktop\webSurvey_Sales_CRM-master\WebSurvey_Sales_CRM\bin\Debug\net7.0\Microsoft.Extensions.Options.dll
+C:\Users\DoanIT\Desktop\webSurvey_Sales_CRM-master\WebSurvey_Sales_CRM\obj\Debug\net7.0\WebSurvey_Sales_CRM.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\DoanIT\Desktop\webSurvey_Sales_CRM-master\WebSurvey_Sales_CRM\bin\Debug\net7.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\DoanIT\Desktop\webSurvey_Sales_CRM-master\WebSurvey_Sales_CRM\bin\Debug\net7.0\Newtonsoft.Json.Bson.dll
+C:\Users\DoanIT\Desktop\webSurvey_Sales_CRM-master\WebSurvey_Sales_CRM\bin\Debug\net7.0\X.PagedList.dll
+C:\Users\DoanIT\Desktop\webSurvey_Sales_CRM-master\WebSurvey_Sales_CRM\bin\Debug\net7.0\X.PagedList.Mvc.Core.dll
+C:\Users\DoanIT\Desktop\webSurvey_Sales_CRM-master\WebSurvey_Sales_CRM\bin\Debug\net7.0\X.PagedList.Web.Common.dll

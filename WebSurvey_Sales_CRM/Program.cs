@@ -1,9 +1,14 @@
 using Microsoft.EntityFrameworkCore;
+using System.Net.NetworkInformation;
 using WebSurvey_Sales_CRM.Areas.Admin.Reponsitory.Interface;
 using WebSurvey_Sales_CRM.Areas.Admin.Reponsitory.Service;
 using WebSurvey_Sales_CRM.Data;
 using WebSurvey_Sales_CRM.Reponsitory.Interface;
 using WebSurvey_Sales_CRM.Reponsitory.Service;
+using X.PagedList;
+
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -57,8 +62,7 @@ app.MapControllerRoute(
 	pattern: "{controller=Account}/{action=Login}");
 
 app.MapControllerRoute(
-   name: "areas",
+   name: "area",
    pattern: "{area:exists}/{controller=Dashboard}/{action=Index}/{id?}");
-
-
+	
 app.Run();
