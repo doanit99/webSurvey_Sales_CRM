@@ -9,7 +9,7 @@ namespace WebSurvey_Sales_CRM.Models
 		public int Id { get; set; }
 		[Column(TypeName = "nvarchar(100)")]
 		public string Name { get; set; }
-		public int Phone { get; set; }
+		public string Phone { get; set; }
 		[Column(TypeName = "nvarchar(250)")]
 		public string Email { get; set; }
 		[Column(TypeName = "nvarchar(500)")]

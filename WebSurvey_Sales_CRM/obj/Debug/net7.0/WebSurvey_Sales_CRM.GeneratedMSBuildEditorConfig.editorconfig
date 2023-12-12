@@ -48,12 +48,28 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/DoanIT/Desktop/webSurvey_Sales_CRM-master/WebSurvey_Sales_CRM/Areas/Admin/Views/Survey/ApproveEmployee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3VydmV5XEFwcHJvdmVFbXBsb3llZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DoanIT/Desktop/webSurvey_Sales_CRM-master/WebSurvey_Sales_CRM/Areas/Admin/Views/Survey/ApproveEnterprise.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3VydmV5XEFwcHJvdmVFbnRlcnByaXNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/DoanIT/Desktop/webSurvey_Sales_CRM-master/WebSurvey_Sales_CRM/Areas/Admin/Views/Survey/DeleteEmployee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3VydmV5XERlbGV0ZUVtcGxveWVlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/DoanIT/Desktop/webSurvey_Sales_CRM-master/WebSurvey_Sales_CRM/Areas/Admin/Views/Survey/DeleteEnterprise.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3VydmV5XERlbGV0ZUVudGVycHJpc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/DoanIT/Desktop/webSurvey_Sales_CRM-master/WebSurvey_Sales_CRM/Areas/Admin/Views/Survey/DetailEmployee.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3VydmV5XERldGFpbEVtcGxveWVlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DoanIT/Desktop/webSurvey_Sales_CRM-master/WebSurvey_Sales_CRM/Areas/Admin/Views/Survey/DetailEnterprise.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU3VydmV5XERldGFpbEVudGVycHJpc2UuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/DoanIT/Desktop/webSurvey_Sales_CRM-master/WebSurvey_Sales_CRM/Areas/Admin/Views/Survey/Index.cshtml]
@@ -88,8 +104,16 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/DoanIT/Desktop/webSurvey_Sales_CRM-master/WebSurvey_Sales_CRM/Views/Employee/Notification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbG95ZWVcTm90aWZpY2F0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/DoanIT/Desktop/webSurvey_Sales_CRM-master/WebSurvey_Sales_CRM/Views/Enterprise/IndexEnterprise.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50ZXJwcmlzZVxJbmRleEVudGVycHJpc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DoanIT/Desktop/webSurvey_Sales_CRM-master/WebSurvey_Sales_CRM/Views/Enterprise/Notification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW50ZXJwcmlzZVxOb3RpZmljYXRpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/DoanIT/Desktop/webSurvey_Sales_CRM-master/WebSurvey_Sales_CRM/Views/Home/Index.cshtml]

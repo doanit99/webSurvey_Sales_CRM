@@ -58,6 +58,21 @@ namespace WebSurvey_Sales_CRM.Reponsitory.Service
                 throw;
             }
 
+        }
+
+        //Get all data in table User
+        public IEnumerable<User> GetUser()
+        {
+            try
+            {
+                return _context.Users.ToList();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error occurred: {ex.Message}");
+                throw;
+            }
+
 
         }
 

@@ -103,13 +103,19 @@ namespace WebSurvey_Sales_CRM.Controllers
             try
             {
                 var data = await _enterpriseRepository.StoreInformationEnterprise(enterprise);
-                return RedirectToAction("IndexEnterprise");
+                return RedirectToAction("Notification");
             }
             catch (Exception ex)
             {
                 ViewBag.ErrorMessage = $"Error: {ex.Message}";
                 return View();
             }
+        }
+
+        //Index successful notification
+        public IActionResult Notification()
+        {
+            return View();
         }
     }
 }

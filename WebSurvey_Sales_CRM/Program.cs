@@ -1,4 +1,5 @@
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 using System.Net.NetworkInformation;
 using WebSurvey_Sales_CRM.Areas.Admin.Reponsitory.Interface;
 using WebSurvey_Sales_CRM.Areas.Admin.Reponsitory.Service;
@@ -33,9 +34,9 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectio
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddSession(options =>
 {
-    options.IdleTimeout = TimeSpan.FromMinutes(30);
+    options.IdleTimeout = TimeSpan.FromMinutes(1);
 });
-
+//
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

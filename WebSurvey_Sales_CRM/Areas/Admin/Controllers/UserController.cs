@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using WebSurvey_Sales_CRM.Areas.Admin.Reponsitory.Interface;
 using WebSurvey_Sales_CRM.Models;
+using X.PagedList;
 
 namespace WebSurvey_Sales_CRM.Areas.Admin.Controllers
 {
@@ -19,15 +20,20 @@ namespace WebSurvey_Sales_CRM.Areas.Admin.Controllers
         }
        
         //Get all data in user
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(int? page)
         {
             if (_httpContextAccessor.HttpContext?.Session.GetInt32("idUser") == null)
             {
                 return Redirect("/");
             }
+            int pageSize = 10;
+            int pageNumber = page ?? 1;
 
             var data = await _userRepository.GetUsers();
-            return View(data);
+
+            var pagedList = data.ToPagedList(pageNumber, pageSize);
+
+            return View(pagedList);
         }
 
         //View Grant permissions

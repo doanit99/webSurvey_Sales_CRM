@@ -6,6 +6,7 @@ namespace WebSurvey_Sales_CRM.Reponsitory.Interface
     {
         IEnumerable<Source> GetSource();
         IEnumerable<Team> GetTeam();
+        IEnumerable<User> GetUser();
 
         //Function store information employee
         Task<IEnumerable<Employee>> StoreInformationEmployee(Employee employee);

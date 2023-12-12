@@ -45,8 +45,8 @@ namespace WebSurvey_Sales_CRM.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("Phone")
-                        .HasColumnType("int");
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(15)");
 
                     b.Property<int>("SourceCode")
                         .HasColumnType("int");
@@ -91,8 +91,8 @@ namespace WebSurvey_Sales_CRM.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<int>("Phone")
-                        .HasColumnType("int");
+                    b.Property<string>("Phone")
+                        .HasColumnType("nvarchar(15)");
 
                     b.Property<string>("Position")
                         .IsRequired()
