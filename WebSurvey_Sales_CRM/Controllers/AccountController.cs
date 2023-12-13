@@ -26,7 +26,15 @@ namespace WebSurvey_Sales_CRM.Controllers
         {
             try
             {
-                
+                // Check if the username already exists
+                bool isUsernameExists = await _accountRepository.IsUsernameExists(user.UserName);
+
+                if (isUsernameExists)
+                {
+                    // Username already exists, provide appropriate feedback (e.g., show an error message)
+                    ModelState.AddModelError("Username", "Tên tài khoản đã tồn tại");
+                    return View();
+                }
                 var data = await _accountRepository.Register(user);
 
                 

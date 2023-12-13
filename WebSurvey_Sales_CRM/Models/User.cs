@@ -13,11 +13,13 @@ namespace WebSurvey_Sales_CRM.Models
 		[Required(ErrorMessage = "Vui lòng nhập đầy đủ thông tin")]
 		[Column(TypeName = "nvarchar(250)")]
 		public string UserName { get; set; }
-		[Required(ErrorMessage = "Vui lòng nhập đầy đủ thông tin")]
+        [Required(ErrorMessage = "Vui lòng nhập đầy đủ thông tin")]
         [StringLength(250, MinimumLength = 6, ErrorMessage = "Mật khẩu phải có ít nhất 6 ký tự.")]
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$", ErrorMessage = "Mật khẩu phải chứa ít nhất một chữ thường, một chữ hoa và một chữ số.")]
         [Column(TypeName = "nvarchar(250)")]
-		public string Password { get; set; }
-        
+        public string Password { get; set; }
+
+
         [Column(TypeName = "nvarchar(100)")]
         public string TypeUser { get; set; }
         public int Roles { get; set; }

@@ -29,6 +29,7 @@ options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnectio
 		builder.Services.AddScoped<ISurvey, SurveyService>();
 		builder.Services.AddScoped<INewOption, NewOptionService>();
 		builder.Services.AddScoped<IUser, UserService>();
+		builder.Services.AddScoped<IDashboard, DashboardService>();
 
 //Configure Session
 builder.Services.AddHttpContextAccessor();

@@ -24,6 +24,7 @@ namespace WebSurvey_Sales_CRM.Reponsitory.Service
         {
             try
             {
+               
                 user.Password = HashPassword(user.Password);
                 _context.Users.Add(user);
                 await _context.SaveChangesAsync();
@@ -35,6 +36,13 @@ namespace WebSurvey_Sales_CRM.Reponsitory.Service
                 throw;
             }
 
+        }
+
+        //Check if the username already exists
+        public async Task<bool> IsUsernameExists(string username)
+        {
+            // Check if any user in the database has the given username
+            return await _context.Users.AnyAsync(u => u.UserName == username);
         }
 
         //create a string MD5
